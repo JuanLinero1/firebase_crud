@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
@@ -18,7 +19,7 @@ body {
   font-size: 1.4rem;
   color: black;
   border-collapse: separate;
-  border-spacing: 30px;
+  border-spacing: 0 40px;
   position: relative;
 }
 .table .table__head::before {
@@ -26,7 +27,7 @@ body {
   position: absolute;
   content: "";
   background-color: black;
-  width: 95%;
+  width: 100%;
   height: 2px;
   transform: translateY(40px);
 }
@@ -43,7 +44,7 @@ body {
   background-color: black;
   width: 100%;
   height: 1px;
-  transform: translateY(40px);
+  transform: translateY(60px);
 }
 .table .user:first-child {
   border-top: 2px solid black;
@@ -52,8 +53,38 @@ body {
   display: flex;
   align-content: center;
 }
-.table .user__interface div {
-  margin: 0 20px 0 0;
+
+.btn {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1s solid black;
+  opacity: 0.9;
+}
+.btn:hover {
+  transition: 0.2s all ease;
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.btn__create {
+  margin: 30px 0 10px 0;
+}
+.btn__create:hover {
+  background-color: lightblue;
+}
+
+.btn__update {
+  background-color: blue;
+  color: white;
+}
+
+.btn__delete {
+  margin: 0 10px 0 0px;
+  color: white;
+  background-color: red;
 }
 
 /*# sourceMappingURL=main.css.map */
