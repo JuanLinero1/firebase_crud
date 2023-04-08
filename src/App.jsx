@@ -18,11 +18,23 @@ function App() {
   }, [])
   
   return (
-    <div className="App">
-      <table>
-        <Read data={users} />
+    <>
+      <Create />
+      <table className='table'>
+        <thead>
+          <tr className='table__head'>
+            <th scope='column'>#</th>
+            <th scope='column'>Full Name</th>
+            <th scope='column'>Age</th>
+            <th scope='column'>Email</th>
+            <th scope='column'>Button</th>
+          </tr>
+        </thead>
+        <tbody>
+          <Read data={users} />
+        </tbody>
       </table>
-    </div>
+    </>
   )
 }
 

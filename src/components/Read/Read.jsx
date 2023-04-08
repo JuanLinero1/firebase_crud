@@ -6,17 +6,18 @@ import Update  from '../Update/Update'
 const Read = (props) => {
   const data = props.data
   return (
-    data.map(item => {
-      console.log(item)
+    data.map((item, index) => {
       return( 
-        <tr className='row'>
-          <td>{item["First Name"]}</td>
-          <td>{item["Last Name"]}</td>
-          <td>{item["Age"]}</td>
-          <td>{item["Email"]}</td>  
-          <td><Delete /></td>
-          <td><Update /></td>
-        </tr>
+          <tr key={item.id} className='user'>
+              <td>{index + 1}</td>
+              <td>{item["First Name"] + " " + item["Last Name"]}</td>
+              <td>{item["Age"]}</td>
+              <td>{item["Email"]}</td>
+              <td className='user__interface'>
+                <Delete /> 
+                <Update />
+              </td>
+          </tr>
       )
     })
   )

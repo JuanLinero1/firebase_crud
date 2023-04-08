@@ -1,0 +1,67 @@
+@import '../src/components/Read/Read.scss';
+
+$white: #5e646a;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: white;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
+.table{
+  background-color: white;
+  width: 90vw;
+  font-size: 1.4rem;
+  color: black;
+  border-collapse: separate;
+  border-spacing: 30px; 
+  position: relative;
+  
+  .table__head{
+    &::before{
+      display: block;
+      position: absolute;
+      content: "";
+      background-color: black;
+      width: 95%;
+      height: 2px;
+      transform: translateY(40px);
+    }
+    th{
+      text-align: left;
+    }
+  }
+
+  .user{
+    position: relative;
+
+    &::before{
+      display: block;
+      position: absolute;
+      content: "";
+      background-color: black;
+      width: 100%;
+      height: 1px;
+      transform: translateY(40px);
+    }
+    &:first-child{
+      border-top: 2px solid black;
+    }
+    
+    &__interface{
+      display: flex;
+      align-content: center;
+      div{
+        margin: 0 20px 0 0;
+      }
+
+  }
+  }
+}
+
