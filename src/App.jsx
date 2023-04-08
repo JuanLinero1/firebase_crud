@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { db } from '../firebase'
 import { collection, getDocs } from 'firebase/firestore'
 
+import Read from './components/Read/Read'
 import Create from './components/Create/Create'
 
 function App() {
@@ -12,14 +13,15 @@ function App() {
     const getUsers = async () => {
       const data = await getDocs(usersCollectionRef)
       setUsers(data.docs.map(doc => ({...doc.data(), id: doc.id})))
-      console.log(users)
     }
     getUsers()
   }, [])
   
   return (
     <div className="App">
-      <Create />
+      <table>
+        <Read data={users} />
+      </table>
     </div>
   )
 }
