@@ -13,6 +13,10 @@ const Read = (props) => {
     props.setIdUser(item)
   }
 
+  useEffect(() => { 
+    props.getUsers
+  }, [props.changeCount]);  
+
   return (
     data.map((item, index) => {
       return( 

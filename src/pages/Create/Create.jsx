@@ -24,7 +24,8 @@ const Create = (props) => {
   }
   
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault()    
+    props.getUsers()
     createUsers()
   }
 

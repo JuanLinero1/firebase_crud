@@ -3,12 +3,10 @@ import { useNavigate } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 
 
-const Update = (props) => {
+export const Update = (props) => {
   const USER = props.user
   const setUSER = props.setUser
   const updateUser = props.updateFunc
-
-  const { reset } = useForm();
 
   const [newUser, setNewUser] = useState({
     "First Name": USER["First Name"], 
@@ -32,7 +30,8 @@ const Update = (props) => {
   const onSubmit = async (e) => {
     e.preventDefault()
     await updateUser(USER.id, newUser);
-    setUSER(null);
+    props.getUsers()
+    setUSER(null);  
   };
 
   return (
@@ -91,5 +90,3 @@ const Update = (props) => {
     </div>
   )
 }
-
-export default Update
