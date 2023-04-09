@@ -17,7 +17,7 @@ function Home(props) {
           </tr>
         </thead>
         <tbody>
-          <Read setId={props.setId} data={users} />
+          <Read setIdUser={props.setIdUser} data={users} />
         </tbody>
       </table>
     </>

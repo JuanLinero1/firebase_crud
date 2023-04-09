@@ -24,8 +24,8 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={ <Home setId={setIdUser} data={users}/> } />
-        <Route path="/Update" element={ <Update id={(idUser === "") ? "error" : idUser} /> } />
+        <Route path="/" element={ <Home setIdUser={setIdUser} data={users}/> } />
+        <Route path="/Update" element={ <Update idUser={(idUser === "") ? "error" : idUser} /> } />
         <Route path="/Create" element={ <Create data={usersCollectionRef} /> } />
       </Routes> 
     </>

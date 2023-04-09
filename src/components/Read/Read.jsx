@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 
 const Read = (props) => {
   const data = props.data
+
+  console.log(props)
   return (
     data.map((item, index) => {
       return( 
@@ -11,7 +13,7 @@ const Read = (props) => {
               <td>{item["Age"]}</td>
               <td>{item["Email"]}</td>
               <td className='user__interface'>
-                <a href="/Update"><button className='btn btn__update' onClick={() => { props.setId(item.id) }}>Update</button></a>
+                <a href="/Update"><button className='btn btn__update' onClick={() => { props.setIdUser(item.id) }}>Update</button></a>
               </td>
           </tr>
       )

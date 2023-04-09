@@ -4,7 +4,7 @@ import { addDoc, doc, updateDoc } from 'firebase/firestore'
 const Update = (props) => {
   console.log(props)  
   // doc(db, "Users", data.)
-  useState(() => props.id, [props.id])
+  useState(() => props.idUser, [props.idUser])
   const handleChange = () => {}
   return (
     <div className='profile'>
