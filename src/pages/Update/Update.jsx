@@ -12,7 +12,7 @@ const Update = (props) => {
   const [newUser, setNewUser] = useState({
     "First Name": "", 
     "Last Name": "", 
-    "age": 0, 
+    "Age": "", 
     "Email": "",  
   })
 
@@ -27,6 +27,15 @@ const Update = (props) => {
   const handleNavigate = () => {
     navigate("/")
   }
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await updateUser(user.id, newUser);
+    const updatedUser = { ...user, ...newUser };
+    setUser(updatedUser);
+    updateFunc(updatedUser); // Call the `updateUser` callback function with the updated user data
+    handleNavigate();
+  }
 
   return (
     <div className='profile'>
@@ -34,7 +43,7 @@ const Update = (props) => {
         <h1>Update An Existing Profile</h1>
         <a href="/"><button className='btn btn__form-cancel'>Cancel</button></a>
       </div>
-      <form className='form' onSubmit={() => updateUser(USER.ID, newUser)}>
+      <form className='form' onSubmit={async (e) => {handleSubmit(e)}}>
           <input name='First Name' type="text" placeholder='first Name' onChange={(e) => handleChange(e)} defaultValue={USER['First Name']} required />
           <input name='Last Name'  type="text" placeholder='Last Name'  onChange={(e) => handleChange(e)} defaultValue={USER['Last Name']} required />
           <input name='Age'       type="number" placeholder='Age'       onChange={(e) => handleChange(e)} defaultValue={USER['Age']} required min="0" max="200"/>
