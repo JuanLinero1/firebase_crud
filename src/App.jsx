@@ -4,7 +4,7 @@ import Create from "./pages/Create/Create";
 
 import React, { useEffect, useState } from 'react'
 import { db } from '../firebase'
-import { collection, getDoc, getDocs, doc, updateDoc } from 'firebase/firestore'
+import { collection, getDocs, doc, updateDoc, deleteDoc } from 'firebase/firestore'
 import { Routes, Route } from 'react-router';
 
 function App() {
@@ -25,16 +25,22 @@ function App() {
     getUsers()
   }, [])
 
+  
   const updateUser = async (id, updates)  => {
     const docRef = doc(db, 'Users', id)
     await updateDoc(docRef, updates)
-    const docSnap = await getDoc(docRef)  
+  }
+  const deleteUser = async (e, id) => {
+    e.preventDefault()
+    const docRef = doc(db, 'Users', id)
+    await deleteDoc(docRef)
+    getUsers()
   }
 
   return (
     <>
       <Routes>
-        <Route path="/" element={ <Home setIdUser={setIdUser} data={users} changeCount={changeCount}/> } />
+        <Route path="/" element={ <Home setIdUser={setIdUser} data={users} changeCount={changeCount} deleteUser={deleteUser} /> } />
         <Route path="/Update" element={ <Update setUser={setIdUser} user={idUser} updateFunc={updateUser} handleChanges={handleChanges} changeCount={changeCount} getUsers={getUsers} /> } />
         <Route path="/Create" element={ <Create data={usersCollectionRef} handleChanges={handleChanges} changeCount={changeCount} getUsers={getUsers} /> } />
       </Routes> 

@@ -1,6 +1,6 @@
-import React, { useReducer, useState } from 'react'
-import './Create.css'
+import React, { useState } from 'react'
 import { addDoc } from 'firebase/firestore'
+import { useNavigate } from 'react-router-dom'
 
 const Create = (props) => {
   const data = props.data
@@ -11,6 +11,11 @@ const Create = (props) => {
     "age": 0, 
     "Email": "",  
   })
+
+  const navigate = useNavigate()
+  const handleNavigate = () => {
+    navigate("/")
+  }
 
   const handleChange = (e) => {
     const {name, value} = e.target
@@ -24,9 +29,10 @@ const Create = (props) => {
   }
   
   const handleSubmit = (e) => {
-    e.preventDefault()    
+    e.preventDefault()
     props.getUsers()
     createUsers()
+    setTimeout(() => handleNavigate(), 0)
   }
 
 
