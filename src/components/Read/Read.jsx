@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom'
 const Read = (props) => {
   const data = props.data
 
-  console.log(props)
   const handleState = () => {
     props.setIdUser()
   }
@@ -23,7 +22,7 @@ const Read = (props) => {
               <td>{item["Age"]}</td>
               <td>{item["Email"]}</td>
               <td className='user__interface'>
-                <button className='btn btn__update' onClick={() => handleNavigate(item.id)}>Update</button>
+                <button className='btn btn__update' onClick={() => handleNavigate(item)}>Update</button>
               </td>
           </tr>
       )
