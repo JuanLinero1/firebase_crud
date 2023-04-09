@@ -24,7 +24,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={ <Home data={users}/> } />
-        <Route path="/Update" element={ <Update /> } />
+        <Route path="/Update" element={ <Update data={users} /> } />
         <Route path="/Create" element={ <Create data={usersCollectionRef} /> } />
       </Routes> 
     </>
