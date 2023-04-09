@@ -1,10 +1,14 @@
 import React, { useReducer, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useForm } from 'react-hook-form'
+
 
 const Update = (props) => {
   const USER = props.user
   const setUSER = props.setUser
   const updateUser = props.updateFunc
+
+  const { handleSubmit, reset } = useForm();
 
   const [newUser, setNewUser] = useState({
     "First Name": USER["First Name"], 
@@ -24,26 +28,20 @@ const Update = (props) => {
   const handleNavigate = () => {
     navigate("/")
   }
-  
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const updatedUser = await updateUser(USER.id, newUser);
-      setUSER(updatedUser);
-    } catch (error) {
-      console.error(error);
-    }
-  }
+
+  const onSubmit = async (e) => {
+    await updateUser(USER.id, newUser);
+    reset();
+    setUSER(null);
+  };
 
   return (
     <div className='profile'>
       <div className='title'>
         <h1>Update An Existing Profile</h1>
-        <a href="/">
-          <button className='btn btn__form-cancel'>Cancel</button>
-        </a>
+          <button className='btn btn__form-cancel' onClick={handleNavigate}>Cancel</button>
       </div>
-      <form className='form' onSubmit={handleSubmit}>
+      <form className='form'>
           <input 
             name='First Name'
             type="text" 
@@ -80,8 +78,13 @@ const Update = (props) => {
           />
           <button 
             type='submit' 
-            className='btn btn__form-update' 
-            onClick={ () => {handleNavigate() }}
+            className='btn btn__form-update'
+            onClick={
+              (e) => {
+                e.preventDefault()
+                onSubmit()
+              }
+            }
             >Update
           </button>
       </form>
