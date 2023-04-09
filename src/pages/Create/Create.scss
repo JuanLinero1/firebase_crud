@@ -1,4 +1,4 @@
-.create-profile{
+.profile{
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -6,7 +6,7 @@
   flex-flow: column wrap;
   gap: 20px;
 
-  .create__title{
+  .title{
     display: flex;
     justify-content: space-around;
     flex-flow: row wrap;
@@ -34,7 +34,7 @@
       border-radius: 20px;
       border: 1px solid black;
     }
-    .btn__form-submit{
+    .btn__form-submit, .btn__form-update{
       margin: 30px 30px 0 0;
       background-color: white;
       &:hover{

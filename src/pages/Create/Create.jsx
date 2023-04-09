@@ -30,8 +30,8 @@ const Create = (props) => {
 
 
   return (
-    <div className='create-profile'>
-      <div className='create__title'>
+    <div className='profile'>
+      <div className='title'>
         <h1>Create A New Profile</h1>
         <a href="/"><button className='btn btn__form-cancel' onSubmit={e => e.preventDefault(e)}>Cancel</button></a>
       </div>

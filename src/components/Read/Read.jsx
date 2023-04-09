@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 import Delete from '../Delete/DeleteButton'
 import Update  from '../Update/UpdateButton'
 
 const Read = (props) => {
   const data = props.data
+
   return (
     data.map((item, index) => {
       return( 
@@ -15,7 +16,7 @@ const Read = (props) => {
               <td>{item["Email"]}</td>
               <td className='user__interface'>
                 <Delete /> 
-                <Update />
+                <Update/>
               </td>
           </tr>
       )

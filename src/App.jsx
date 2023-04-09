@@ -1,5 +1,5 @@
 import Home from "./pages/Home/Home"
-import Update from './pages/Update/Update';
+import Update from './pages/Update/update';
 import Create from "./pages/Create/Create";
 
 import React, { useEffect, useState } from 'react'
@@ -24,7 +24,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={ <Home data={users}/> } />
-        <Route path="/Update" element={ <Update data={users} /> } />
+        <Route path="/Update" element={ <Update /> } />
         <Route path="/Create" element={ <Create data={usersCollectionRef} /> } />
       </Routes> 
     </>

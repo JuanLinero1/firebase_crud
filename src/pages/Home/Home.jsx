@@ -3,7 +3,6 @@ import Create from '../../components/Create/CreateButton'
 
 function Home(props) {
   const users = props.data
-  console.log(props)
   return (
     <>
       <Create />

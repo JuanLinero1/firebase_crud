@@ -1,4 +1,4 @@
-.create-profile {
+.profile {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -6,27 +6,27 @@
   flex-flow: column wrap;
   gap: 20px;
 }
-.create-profile .create__title {
+.profile .title {
   display: flex;
   justify-content: space-around;
   flex-flow: row wrap;
   gap: 20px;
 }
-.create-profile .create__title h1 {
+.profile .title h1 {
   color: black;
 }
-.create-profile .create__title .btn__form-cancel:hover {
+.profile .title .btn__form-cancel:hover {
   background-color: rgb(150, 21, 21);
   color: white;
 }
-.create-profile .form {
+.profile .form {
   color: black !important;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: column wrap;
 }
-.create-profile .form input {
+.profile .form input {
   margin: 10px 0;
   width: 80%;
   font-size: 1.5rem;
@@ -34,13 +34,11 @@
   border-radius: 20px;
   border: 1px solid black;
 }
-.create-profile .form .btn__form-submit {
+.profile .form .btn__form-submit, .profile .form .btn__form-update {
   margin: 30px 30px 0 0;
   background-color: white;
 }
-.create-profile .form .btn__form-submit:hover {
+.profile .form .btn__form-submit:hover, .profile .form .btn__form-update:hover {
   background-color: rgb(1, 1, 139);
   color: white;
-}
-
-/*# sourceMappingURL=Create.css.map */
+}/*# sourceMappingURL=Create.css.map */
