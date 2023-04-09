@@ -2,9 +2,7 @@ import React from 'react'
 
 const Create = () => {
   return (
-    <button className='btn btn__create'>
-      CREATE
-    </button>
+    <a href="/Create"><button className='btn btn__create'>Create</button></a>
   )
 }
 

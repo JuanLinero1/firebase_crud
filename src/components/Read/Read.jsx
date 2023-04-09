@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Delete from '../Delete/Delete'
-import Update  from '../Update/Update'
+import Delete from '../Delete/DeleteButton'
+import Update  from '../Update/UpdateButton'
 
 const Read = (props) => {
   const data = props.data
@@ -9,7 +9,7 @@ const Read = (props) => {
     data.map((item, index) => {
       return( 
           <tr key={item.id} className='user'>
-              <td>{index + 1}</td>
+              <th scope='row'>{index + 1}</th>
               <td>{item["First Name"] + " " + item["Last Name"]}</td>
               <td>{item["Age"]}</td>
               <td>{item["Email"]}</td>

@@ -1,14 +1,16 @@
-import { useEffect, useState } from 'react'
+import Home from "./pages/Home/Home"
+import Update from './pages/Update/Update';
+import Create from "./pages/Create/Create";
+
+import React, { useEffect, useState } from 'react'
 import { db } from '../firebase'
 import { collection, getDocs } from 'firebase/firestore'
-
-import Read from './components/Read/Read'
-import Create from './components/Create/Create'
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
   const [users, setUsers] = useState([])
   const usersCollectionRef = collection(db, "Users")
-
+  
   useEffect(() => {
     const getUsers = async () => {
       const data = await getDocs(usersCollectionRef)
@@ -17,23 +19,14 @@ function App() {
     getUsers()
   }, [])
   
+
   return (
     <>
-      <Create />
-      <table className='table'>
-        <thead>
-          <tr className='table__head'>
-            <th scope='column'>#</th>
-            <th scope='column'>Full Name</th>
-            <th scope='column'>Age</th>
-            <th scope='column'>Email</th>
-            <th scope='column'>Button</th>
-          </tr>
-        </thead>
-        <tbody>
-          <Read data={users} />
-        </tbody>
-      </table>
+      <Routes>
+        <Route path="/" element={ <Home data={users}/> } />
+        <Route path="/Update" element={ <Update /> } />
+        <Route path="/Create" element={ <Create data={usersCollectionRef} /> } />
+      </Routes> 
     </>
   )
 }
