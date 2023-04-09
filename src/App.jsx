@@ -1,5 +1,5 @@
 import Home from "./pages/Home/Home"
-import Update from './pages/Update/update';
+import Update from './pages/Update/Update';
 import Create from "./pages/Create/Create";
 
 import React, { useEffect, useState } from 'react'
@@ -10,6 +10,7 @@ import { Routes, Route } from 'react-router-dom';
 function App() {
   const [users, setUsers] = useState([])
   const usersCollectionRef = collection(db, "Users")
+  const [idUser, setIdUser] = useState("")
   
   useEffect(() => {
     const getUsers = async () => {
@@ -19,12 +20,12 @@ function App() {
     getUsers()
   }, [])
   
-
+  console.log(idUser)
   return (
     <>
       <Routes>
-        <Route path="/" element={ <Home data={users}/> } />
-        <Route path="/Update" element={ <Update /> } />
+        <Route path="/" element={ <Home setId={setIdUser} data={users}/> } />
+        <Route path="/Update" element={ <Update id={(idUser === "") ? "error" : idUser} /> } />
         <Route path="/Create" element={ <Create data={usersCollectionRef} /> } />
       </Routes> 
     </>
