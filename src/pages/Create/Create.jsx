@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { addDoc } from 'firebase/firestore'
 import { useNavigate } from 'react-router-dom'
 
+
 const Create = (props) => {
   const data = props.data
 

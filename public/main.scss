@@ -1,8 +1,7 @@
 $white: #5e646a;
 
+@use '../src/pages/Create/Create.scss';
 @use '../src/pages/Home/Home.scss';
-@use 'src/pages/Home/Home.scss';
-@use 'src/pages/';
 
 *{
   margin: 0;

@@ -3,8 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 const Read = (props) => {
   const data = props.data
-
-  console.log(props.deleteUser)
+  
   const navigate = useNavigate()
   const handleNavigateUpdate = (item) => {
     navigate("/Update")
