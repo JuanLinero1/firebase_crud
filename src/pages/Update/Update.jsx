@@ -2,8 +2,7 @@ import React, { useReducer, useState } from 'react'
 import { addDoc, doc, updateDoc } from 'firebase/firestore'
 
 const Update = (props) => {
-  console.log(props)  
-  // doc(db, "Users", data.)
+  console.log(props)
   useState(() => props.idUser, [props.idUser])
   const handleChange = () => {}
   return (

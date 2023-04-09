@@ -5,7 +5,7 @@ import Create from "./pages/Create/Create";
 import React, { useEffect, useState } from 'react'
 import { db } from '../firebase'
 import { collection, getDocs } from 'firebase/firestore'
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router';
 
 function App() {
   const [users, setUsers] = useState([])
@@ -20,12 +20,11 @@ function App() {
     getUsers()
   }, [])
   
-  console.log(idUser)
   return (
     <>
       <Routes>
         <Route path="/" element={ <Home setIdUser={setIdUser} data={users}/> } />
-        <Route path="/Update" element={ <Update idUser={(idUser === "") ? "error" : idUser} /> } />
+        <Route path="/Update" element={ <Update id={idUser} /> } />
         <Route path="/Create" element={ <Create data={usersCollectionRef} /> } />
       </Routes> 
     </>
