@@ -22,7 +22,6 @@ function App() {
   }, [])
 
   const updateUser = async (id, updates)  => {
-    const { "First Name": firstName, "Last Name": lastName, Age: age, Email: email } = updates;
     const docRef = doc(db, 'Users', id)
     await updateDoc(docRef, updates)
     const docSnap = await getDoc(docRef)  
@@ -31,7 +30,6 @@ function App() {
       id: docSnap.id, 
       ...docSnap.data()
     }
-    console.log(user);
   }
 
   return (

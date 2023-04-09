@@ -24,9 +24,8 @@ const Update = (props) => {
   }
 
   const navigate = useNavigate()
-  const handleNavigate = (item) => {
+  const handleNavigate = () => {
     navigate("/")
-    props.setIdUser(item)
   }
 
   return (
@@ -35,15 +34,12 @@ const Update = (props) => {
         <h1>Update An Existing Profile</h1>
         <a href="/"><button className='btn btn__form-cancel'>Cancel</button></a>
       </div>
-      <form className='form'>
-          <input name='First Name' type="text" placeholder='first Name' onChange={handleChange} defaultValue={USER['First Name']} required />
-          <input name='Last Name'  type="text" placeholder='Last Name'  onChange={handleChange} defaultValue={USER['Last Name']} required />
-          <input name='Age'       type="number" placeholder='Age'       onChange={handleChange} defaultValue={USER['Age']} required min="0" max="200"/>
-          <input name='Email'     type="email" placeholder='Email'      onChange={handleChange} defaultValue={USER['Email']} required />
-          <button type='submit' className='btn btn__form-update' onClick={() => {
-            updateUser(newUser)
-            handleNavigate()
-          }}>Update</button>
+      <form className='form' onSubmit={() => updateUser(USER.ID, newUser)}>
+          <input name='First Name' type="text" placeholder='first Name' onChange={(e) => handleChange(e)} defaultValue={USER['First Name']} required />
+          <input name='Last Name'  type="text" placeholder='Last Name'  onChange={(e) => handleChange(e)} defaultValue={USER['Last Name']} required />
+          <input name='Age'       type="number" placeholder='Age'       onChange={(e) => handleChange(e)} defaultValue={USER['Age']} required min="0" max="200"/>
+          <input name='Email'     type="email" placeholder='Email'      onChange={(e) => handleChange(e)} defaultValue={USER['Email']} required />
+          <button type='submit' className='btn btn__form-update' onClick={ () => {handleNavigate() }}>Update</button>
       </form>
     </div>
   )
