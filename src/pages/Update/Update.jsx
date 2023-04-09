@@ -8,7 +8,7 @@ const Update = (props) => {
   const setUSER = props.setUser
   const updateUser = props.updateFunc
 
-  const { handleSubmit, reset } = useForm();
+  const { reset } = useForm();
 
   const [newUser, setNewUser] = useState({
     "First Name": USER["First Name"], 
@@ -30,8 +30,8 @@ const Update = (props) => {
   }
 
   const onSubmit = async (e) => {
+    e.preventDefault()
     await updateUser(USER.id, newUser);
-    reset();
     setUSER(null);
   };
 
@@ -45,7 +45,7 @@ const Update = (props) => {
           <input 
             name='First Name'
             type="text" 
-            placeholder='first Name' 
+            placeholder='First Name' 
             onChange={(e) => handleChange(e)} 
             defaultValue={newUser['First Name']} 
             required 
@@ -81,8 +81,8 @@ const Update = (props) => {
             className='btn btn__form-update'
             onClick={
               (e) => {
-                e.preventDefault()
-                onSubmit()
+                onSubmit(e)
+                setTimeout(() => {handleNavigate()}, 100);
               }
             }
             >Update
