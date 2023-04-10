@@ -3,7 +3,7 @@ import { addDoc } from 'firebase/firestore'
 import { useNavigate } from 'react-router-dom'
 
 
-const Create = (props) => {
+export const Create = (props) => {
   const data = props.data
 
   const [newUser, setNewUser] = useState({
@@ -53,5 +53,3 @@ const Create = (props) => {
     </div>
   )
 }
-
-export default Create

@@ -1,0 +1,26 @@
+{
+  "hosting": {
+    "public": "dist",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "redirects": {
+      "source": "/",
+      "destination": "/src/components/Create/CreateButton.jsx"
+    }
+  },
+  "emulators": {
+    "database": {
+      "port": 9000
+    },
+    "hosting": {
+      "port": 3000
+    },
+    "ui": {
+      "enabled": true
+    },
+    "singleProjectMode": true
+  }
+}

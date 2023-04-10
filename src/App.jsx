@@ -1,6 +1,6 @@
 import Home from "./pages/Home/Home"
-import {Update} from './pages/Update/Update';
-import Create from "./pages/Create/Create";
+import { Update } from './pages/Update/Update';
+import { Create } from "./pages/Create/Create";
 
 import React, { useEffect, useState } from 'react'
 import { db } from '../firebase'
