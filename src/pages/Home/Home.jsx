@@ -5,7 +5,7 @@ function Home(props) {
   const users = props.data
   return (
     <>
-      <Create />
+      <a href="/Create"><button className='btn btn__create'>Create</button></a>
       <table className='table'>
         <thead>
           <tr className='table__head'>

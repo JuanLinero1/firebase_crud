@@ -5,11 +5,7 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ],
-    "redirects": {
-      "source": "/",
-      "destination": "/src/components/Create/CreateButton.jsx"
-    }
+    ]
   },
   "emulators": {
     "database": {
