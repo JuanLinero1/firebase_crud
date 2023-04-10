@@ -1,5 +1,4 @@
 import Read from '../../components/Read/Read'
-import Create from '../../components/Create/CreateButton'
 
 function Home(props) {
   const users = props.data
